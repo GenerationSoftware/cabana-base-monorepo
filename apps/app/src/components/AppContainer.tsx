@@ -1,3 +1,4 @@
+import { useMiniKit } from '@coinbase/onchainkit/minikit'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { useSelectedLanguage } from '@shared/generic-react-hooks'
 import { ErrorPooly } from '@shared/react-components'
@@ -17,6 +18,15 @@ export const AppContainer = (props: AppProps & CustomAppProps) => {
   const { pathname, query, asPath, locale } = router
 
   const [isReady, setIsReady] = useState<boolean>(false)
+
+  const { setFrameReady, isFrameReady } = useMiniKit()
+
+  useEffect(() => {
+    if (!isFrameReady) {
+      setFrameReady()
+      console.log('frame ready')
+    }
+  }, [setFrameReady, isFrameReady])
 
   useEffect(() => {
     const initEruda = async () => {

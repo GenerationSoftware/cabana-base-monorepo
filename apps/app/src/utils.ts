@@ -101,17 +101,3 @@ export const getRoundedDownFormattedTokenAmount = (amount: bigint, decimals: num
 // export const signInDisconnect = async (setUserAddress: (address: Address | undefined) => void) => {
 //   setUserAddress(undefined)
 // }
-
-export const wagmiConfig: Config = createConfig({
-  chains: [base],
-  transports: {
-    [base.id]: http(process.env.NEXT_PUBLIC_BASE_RPC_URL)
-  },
-  ssr: true,
-  connectors: [
-    coinbaseWallet({
-      appName: 'PT'
-    }),
-    farcasterFrame()
-  ]
-})

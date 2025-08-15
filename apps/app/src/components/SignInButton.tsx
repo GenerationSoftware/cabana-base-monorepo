@@ -9,20 +9,32 @@ import {
 } from '@coinbase/onchainkit/wallet'
 import { Button } from '@shared/ui'
 import { useTranslations } from 'next-intl'
-// import { wagmiConfig } from 'src/utils'
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import { useAccount } from 'wagmi'
 
 export const SignInButton = () => {
   const t_common = useTranslations('Common')
+
+  const { address, isConnected } = useAccount()
+
+  // const { setUserAddress } = useAccount()
+  console.log('isConnected')
+  console.log(isConnected)
+  console.log('address')
+  console.log(address)
 
   return (
     <>
       <div className='ock-wallet'>
         <Wallet className='z-10'>
           <ConnectWallet
-            text='asd'
-            className='bg-pt-teal hover:bg-teal-400 py-2 px-0 text-sm transition'
+            text={t_common('connectWallet')}
+            className={
+              !!address
+                ? 'bg-pt-purple-600 hover:bg-teal-400 py-2 px-2 text-sm transition'
+                : 'bg-pt-teal hover:bg-teal-400 py-2 px-0 text-sm transition'
+            }
           >
+            {/* <Avatar border={false} className='bg-none border-0 w-4 h-4 -mr-1 -mt-1' />{' '} */}
             <Name className='text-inherit' />
           </ConnectWallet>
           <WalletDropdown>
@@ -37,9 +49,9 @@ export const SignInButton = () => {
         </Wallet>
       </div>
 
-      {/* <Button onClick={() => console.log(address)} className='text-xs' size='sm'>
+      <Button onClick={() => console.log(address)} className='text-xs' size='sm'>
         test
-      </Button> */}
+      </Button>
     </>
   )
 }
