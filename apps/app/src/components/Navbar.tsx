@@ -189,7 +189,7 @@ const MobileNavbar = (props: MobileNavbarProps) => {
   return (
     <div
       className={classNames(
-        'fixed bottom-0 flex w-full pb-6 pt-4 justify-center items-center gap-6 md:hidden',
+        'fixed bottom-0 flex w-full pb-16 pt-4 justify-center items-center gap-6 md:hidden',
         'bg-pt-purple-600 border-t-2 border-pt-purple-500',
         className
       )}
