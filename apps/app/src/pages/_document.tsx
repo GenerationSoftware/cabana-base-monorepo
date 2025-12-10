@@ -33,6 +33,8 @@ class MyDocument extends Document {
           <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
           <link rel='manifest' href='/manifest.json' />
 
+          <meta name='base:app_id' content='6938c6dce6be54f5ed71d4d0' />
+
           <meta name='theme-color' content='#21064e' />
           <meta name='description' content={description} />
           <meta name='keywords' content={keywords} />
