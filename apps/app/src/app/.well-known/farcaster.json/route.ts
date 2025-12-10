@@ -23,7 +23,11 @@ export async function GET() {
       name: process.env.NEXT_PUBLIC_ONCHAINKIT_PROJECT_NAME,
       subtitle: process.env.NEXT_PUBLIC_APP_SUBTITLE,
       description: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
-      screenshotUrls: [],
+      screenshotUrls: [
+        `${process.env.NEXT_PUBLIC_URL}/base-screenshot-1.png`,
+        `${process.env.NEXT_PUBLIC_URL}/base-screenshot-2.png`,
+        `${process.env.NEXT_PUBLIC_URL}/base-screenshot-3.png`
+      ],
       iconUrl: process.env.NEXT_PUBLIC_APP_ICON,
       splashImageUrl: process.env.NEXT_PUBLIC_APP_SPLASH_IMAGE,
       splashBackgroundColor: process.env.NEXT_PUBLIC_SPLASH_BACKGROUND_COLOR,
