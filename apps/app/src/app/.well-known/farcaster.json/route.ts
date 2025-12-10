@@ -24,9 +24,9 @@ export async function GET() {
       subtitle: process.env.NEXT_PUBLIC_APP_SUBTITLE,
       description: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
       screenshotUrls: [
-        `${process.env.NEXT_PUBLIC_URL}/base-screenshot-1.png`,
-        `${process.env.NEXT_PUBLIC_URL}/base-screenshot-2.png`,
-        `${process.env.NEXT_PUBLIC_URL}/base-screenshot-3.png`
+        `${process.env.NEXT_PUBLIC_URL}base-screenshot-1.png`,
+        `${process.env.NEXT_PUBLIC_URL}base-screenshot-2.png`,
+        `${process.env.NEXT_PUBLIC_URL}base-screenshot-3.png`
       ],
       iconUrl: process.env.NEXT_PUBLIC_APP_ICON,
       splashImageUrl: process.env.NEXT_PUBLIC_APP_SPLASH_IMAGE,
